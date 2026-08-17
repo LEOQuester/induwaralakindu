@@ -45,7 +45,7 @@ jobs:
           protocol: ftps
           security: loose
           timeout: 1200000
-          local-dir: ./
+          local-dir: ./dist/
           server-dir: ${{ secrets.REMOTE_DIR }}/
           log-level: minimal
           exclude: |
