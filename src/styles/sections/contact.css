@@ -1,0 +1,49 @@
+.contact {
+  padding-bottom: calc(var(--section-gap) + 2rem);
+}
+
+.contact__inner {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top, rgba(110, 231, 183, 0.08), transparent 55%),
+    var(--surface);
+}
+
+.contact__title {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+.contact__lead {
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.contact__actions {
+  margin-bottom: 2rem;
+}
+
+.contact__social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+}
+
+.contact__social-link {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+
+.contact__social-link:hover {
+  color: var(--accent);
+}
