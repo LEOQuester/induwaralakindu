@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Induwara Lakindu — personal site and projects." />
+    <title>Induwara Lakindu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --text: #eef2ff;
+        --muted: #9aa7c7;
+        --accent: #6ee7b7;
+        --accent-2: #60a5fa;
+        --card: rgba(255, 255, 255, 0.04);
+        --border: rgba(255, 255, 255, 0.08);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 35%),
+          radial-gradient(circle at bottom right, rgba(110, 231, 183, 0.14), transparent 30%),
+          var(--bg);
+      }
+
+      .page {
+        width: min(960px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 4rem 0 3rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--card);
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .badge::before {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 12px var(--accent);
+      }
+
+      .hero {
+        margin-top: 1.5rem;
+      }
+
+      .hero h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lead {
+        max-width: 42rem;
+        margin: 0;
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+
+      .card {
+        padding: 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        background: var(--card);
+        backdrop-filter: blur(8px);
+      }
+
+      .card h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="badge">Available for collaboration</div>
+
+      <section class="hero">
+        <h1>Hello, I'm <span>Induwara Lakindu</span></h1>
+        <p class="lead">
+          Welcome to my corner of the web. I build thoughtful software, ship clean
+          interfaces, and enjoy turning ideas into reliable products.
+        </p>
+      </section>
+
+      <section class="grid" aria-label="Highlights">
+        <article class="card">
+          <h2>Build</h2>
+          <p>Modern web apps with attention to performance, accessibility, and maintainability.</p>
+        </article>
+        <article class="card">
+          <h2>Ship</h2>
+          <p>Automated deployments and practical workflows that keep releases smooth.</p>
+        </article>
+        <article class="card">
+          <h2>Learn</h2>
+          <p>Always exploring new tools, patterns, and better ways to solve real problems.</p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Induwara Lakindu. Deployed via GitHub Actions.</p>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+# FTPS deploy to cPanel; vendor/ and node_modules/ are excluded and managed on the server.
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: true
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Build frontend assets
+        # Rebuild Vite assets so public/build CSS+JS are included in each deploy.
+        run: |
+          npm ci
+          npm run build
+
+      # Retry-friendly FTPS upload; partial uploads resume on the next run.
+      - name: Deploy using FTPS
+        timeout-minutes: 18
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          security: loose
+          timeout: 1200000
+          local-dir: ./
+          server-dir: ${{ secrets.REMOTE_DIR }}/
+          log-level: minimal
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/vendor/**
+            **/tests/**
+            **/.env
+            **/.env.*
+            **/.editorconfig
+            **/.phpunit.cache/**
+            **/.phpunit.result.cache
+            **/phpunit.xml
+            **/phpunit.xml.dist
+            **/Homestead.json
+            **/Homestead.yaml
+            **/auth.json
+            **/database/database.sqlite
+            **/database/*.sqlite
+            **/storage/pail/**
+            **/storage/*.key
+            **/public/hot
+            **/public/storage
+            **/AGENTS.md
+            **/README.md
+            **/DOCUMENTATION.md
