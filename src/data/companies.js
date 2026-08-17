@@ -1,3 +1,5 @@
+import { media } from './media.js';
+
 export const companies = [
   {
     id: 'galvanprime',
@@ -5,7 +7,7 @@ export const companies = [
     role: 'CEO & Founder',
     description:
       'A software company focused on building intelligent solutions — custom development, agentic AI, and enterprise consulting.',
-    logo: '/assets/images/companies/galvanprime-logo.svg',
+    logo: media.galvanprimeLogo,
     url: 'https://galvanprime.com',
     accent: '#6ee7b7',
   },
@@ -15,7 +17,7 @@ export const companies = [
     role: 'Founder & Lead Instructor',
     description:
       'ICT education platform guiding students through structured learning with academic depth and practical engineering insight.',
-    logo: '/assets/images/companies/primeict-logo.svg',
+    logo: media.primeictLogo,
     url: 'https://primeict.lk',
     accent: '#60a5fa',
   },

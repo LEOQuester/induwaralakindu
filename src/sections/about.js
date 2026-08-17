@@ -27,7 +27,7 @@ export function renderAbout() {
         </div>
         <div class="about__image reveal reveal--delay-2">
           <img
-            src="/assets/images/profile/about-portrait.jpg"
+            src="${profile.portrait}"
             alt="${profile.name} — about photo"
             class="about__portrait"
             onerror="this.parentElement.classList.add('about__image--placeholder')"

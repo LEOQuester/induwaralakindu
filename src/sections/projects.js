@@ -12,7 +12,7 @@ export function renderProjects() {
           .map(
             (project, index) => `
           <article class="project-card reveal ${project.featured ? 'project-card--featured' : ''}" style="--index: ${index}">
-            <div class="project-card__media">
+            <div class="project-card__media ${project.logo ? 'project-card__media--logo' : ''}">
               <img
                 src="${project.image}"
                 alt="${project.title}"

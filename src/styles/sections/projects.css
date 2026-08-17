@@ -41,8 +41,29 @@
   transition: transform 0.5s ease;
 }
 
+.project-card__media--logo {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at center, rgba(110, 231, 183, 0.06), transparent 65%),
+    var(--bg-soft);
+}
+
+.project-card__media--logo img {
+  width: auto;
+  height: auto;
+  max-width: 55%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
 .project-card:hover .project-card__media img {
   transform: scale(1.04);
+}
+
+.project-card:hover .project-card__media--logo img {
+  transform: scale(1.06);
 }
 
 .project-card__badge {

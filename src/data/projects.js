@@ -1,3 +1,5 @@
+import { media } from './media.js';
+
 export const projects = [
   {
     id: 'chess-robot',
@@ -6,7 +8,7 @@ export const projects = [
     description:
       'A breakthrough integration of AI, robotics, and computer vision — enabling a physical robot to play chess autonomously.',
     tags: ['AI', 'Robotics', 'Computer Vision'],
-    image: '/assets/images/projects/chess-robot.jpg',
+    image: media.profile,
     featured: true,
   },
   {
@@ -16,7 +18,8 @@ export const projects = [
     description:
       'Custom enterprise solutions and agentic AI systems built at Galvanprime for real-world business impact.',
     tags: ['Agentic AI', 'Enterprise', 'Consulting'],
-    image: '/assets/images/projects/galvanprime.jpg',
+    image: media.galvanprimeLogo,
+    logo: true,
     link: 'https://galvanprime.com',
     featured: true,
   },
@@ -27,7 +30,8 @@ export const projects = [
     description:
       'A teaching platform delivering structured ICT education with clarity, depth, and real-world relevance.',
     tags: ['Education', 'Platform', 'ICT'],
-    image: '/assets/images/projects/primeict.jpg',
+    image: media.primeictLogo,
+    logo: true,
     link: 'https://primeict.lk',
     featured: true,
   },

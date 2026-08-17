@@ -1,9 +1,12 @@
+import { media } from './media.js';
+
 export const profile = {
   name: 'Induwara Lakindu',
   shortName: 'Induwara',
   tagline: 'AI Engineer · CEO · Builder of Intelligent Systems',
   headline: 'Engineering intelligence that solves real-world problems.',
   bio: `Computer science undergraduate working across education, software, and intelligent systems. From coding at age 12 to building Sri Lanka's first chess robot — every step has sharpened the same focus: using technology to create meaningful impact.`,
+  portrait: media.profile,
   roles: [
   { label: 'CEO', org: 'Galvanprime (Pvt) Ltd' },
   { label: 'AI Engineer', org: 'Intelligent Systems' },
