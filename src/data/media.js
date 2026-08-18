@@ -1,14 +1,18 @@
-const PRIMEICT = 'https://primeict.lk';
-const GALVANPRIME = 'https://galvanprime.lk';
-
 export const media = {
-  profile: `${PRIMEICT}/profile.png`,
-  primeictLogo: `${PRIMEICT}/primeictlogo.png`,
-  galvanprimeLogo: `${GALVANPRIME}/galvanlogo.png`,
-  cityBg: `${PRIMEICT}/citybg.png`,
-  og: `${PRIMEICT}/profile.png`,
-  gigs: {
-    alIct: 'https://res.cloudinary.com/dbzfc630s/image/upload/c_limit,w_1600,h_1600,f_auto,q_auto/v1782970875/gigs/thumbnails/6a45f9fae4c74.png',
-    olIct: 'https://res.cloudinary.com/dbzfc630s/image/upload/c_limit,w_1600,h_1600,f_auto,q_auto/v1784711697/gigs/thumbnails/6a608a10b8e5b.png',
+  profile: '/assets/images/profile/teaching.webp',
+  teaching: '/assets/images/profile/teaching.webp',
+  og: '/assets/images/profile/teaching.webp',
+  companies: {
+    galvanprime: '/assets/images/companies/galvanprime.webp',
+    primeict: '/assets/images/companies/primeict.webp',
+    eduzone: '/assets/images/companies/eduzone.webp',
+    oneliquidate: '/assets/images/companies/oneliquidate.webp',
+    travelzone: '/assets/images/companies/travelzone.webp',
+  },
+  achievements: {
+    csslAward: '/assets/images/achievements/cssl-chess-robot-award.webp',
+    legathonGroup: '/assets/images/achievements/legathon-group.webp',
+    legathonAstana: '/assets/images/achievements/legathon-astana.webp',
+    legathonFinals: '/assets/images/achievements/legathon-finals.webp',
   },
 };

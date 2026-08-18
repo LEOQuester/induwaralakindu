@@ -4,12 +4,12 @@ export const skills = [
     items: ['Computer Vision', 'Agentic AI', 'Deep Learning', 'NLP', 'Intelligent Automation'],
   },
   {
-    category: 'Engineering',
-    items: ['Python', 'Django', 'Backend Systems', 'ERP Development', 'API Design'],
+    category: 'Backend & Frameworks',
+    items: ['Django', 'Laravel', 'Flask', 'Node.js', 'Spring Boot', '.NET'],
   },
   {
-    category: 'Robotics & IoT',
-    items: ['Robotics Integration', 'Embedded Systems', 'Sensor Fusion', 'Automation'],
+    category: 'Frontend',
+    items: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Responsive UI'],
   },
   {
     category: 'Leadership',

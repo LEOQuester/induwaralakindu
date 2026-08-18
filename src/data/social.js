@@ -1,26 +1,38 @@
 export const social = [
   {
     id: 'linkedin',
+    icon: 'linkedin',
     label: 'LinkedIn',
-    url: 'https://linkedin.com/in/induwara-lakindu',
-    icon: '/assets/icons/linkedin.svg',
+    url: 'https://www.linkedin.com/in/induwara-lakindu',
   },
   {
     id: 'github',
+    icon: 'github',
     label: 'GitHub',
-    url: 'https://github.com/induwaralakindu',
-    icon: '/assets/icons/github.svg',
+    url: 'https://github.com/LEOQuester/',
+  },
+  {
+    id: 'instagram',
+    icon: 'instagram',
+    label: 'Instagram',
+    url: 'https://www.instagram.com/induwara_lakindu_/',
+  },
+  {
+    id: 'youtube',
+    icon: 'youtube',
+    label: 'YouTube',
+    url: 'https://www.youtube.com/@induwaralakindu-primeict',
   },
   {
     id: 'primeict',
+    icon: 'globe',
     label: 'PrimeICT',
     url: 'https://primeict.lk',
-    icon: '/assets/icons/globe.svg',
   },
   {
     id: 'galvanprime',
+    icon: 'globe',
     label: 'Galvanprime',
-    url: 'https://galvanprime.com',
-    icon: '/assets/icons/globe.svg',
+    url: 'https://galvanprime.lk',
   },
 ];

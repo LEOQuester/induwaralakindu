@@ -5,9 +5,3 @@ h4,
 p {
   margin: 0;
 }
-
-.hero__title-accent,
-.contact__title {
-  font-family: var(--font-serif);
-  font-weight: 400;
-}

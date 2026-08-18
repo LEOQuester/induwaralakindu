@@ -1,4 +1,5 @@
 import { social } from '../data/social.js';
+import { renderSocialLinks } from '../components/social-icons.js';
 
 export function renderFooter() {
   const year = new Date().getFullYear();
@@ -8,16 +9,12 @@ export function renderFooter() {
       <div class="footer__inner">
         <div class="footer__brand">
           <p class="footer__name">Induwara Lakindu</p>
-          <p class="footer__tagline">CEO · Galvanprime · AI Engineer</p>
+          <p class="footer__tagline">Software Engineer · Web Developer · Colombo</p>
+          <p class="footer__seo">
+            Custom web development &amp; software engineering services in Colombo, Sri Lanka.
+          </p>
         </div>
-        <div class="footer__links">
-          ${social
-            .map(
-              (item) =>
-                `<a href="${item.url}" class="footer__link" target="_blank" rel="noopener noreferrer">${item.label}</a>`,
-            )
-            .join('')}
-        </div>
+        ${renderSocialLinks(social, { className: 'footer__social social-icons' })}
         <p class="footer__copy">&copy; ${year} Induwara Lakindu. All rights reserved.</p>
       </div>
     </footer>

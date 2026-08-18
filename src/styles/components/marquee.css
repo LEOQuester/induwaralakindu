@@ -1,0 +1,48 @@
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.1rem 0;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee__item {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 0 1.25rem;
+}
+
+.marquee__sep {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  padding: 0 0.25rem;
+}
+
+.ventures__marquee .marquee__item {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: rgba(99, 102, 241, 0.12);
+}
+
+.ventures__marquee .marquee {
+  border: none;
+  background: transparent;
+  padding: 2rem 0;
+}
+
+.ventures__marquee .marquee__track {
+  animation-duration: 28s;
+}

@@ -5,7 +5,11 @@
 @import './styles/components/buttons.css';
 @import './styles/components/navbar.css';
 @import './styles/components/cards.css';
-@import './styles/components/model-viewer.css';
+@import './styles/components/social-icons.css';
+@import './styles/components/marquee.css';
+@import './styles/sections/tech-stack.css';
+@import './styles/sections/statement.css';
+@import './styles/sections/stories.css';
 @import './styles/sections/hero.css';
 @import './styles/sections/about.css';
 @import './styles/sections/timeline.css';

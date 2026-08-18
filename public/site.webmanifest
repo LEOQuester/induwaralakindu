@@ -1,0 +1,17 @@
+{
+  "name": "Induwara Lakindu — Software Engineer Colombo",
+  "short_name": "Induwara Lakindu",
+  "description": "Software engineer and web development services in Colombo, Sri Lanka.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fc",
+  "theme_color": "#4f46e5",
+  "lang": "en-LK",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

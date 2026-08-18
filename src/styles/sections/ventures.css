@@ -1,84 +1,83 @@
+.ventures__inner {
+  padding-top: 0;
+}
+
 .ventures-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .venture-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.venture-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--accent, var(--accent));
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .venture-card:hover {
-  border-color: var(--border-strong);
+  border-color: rgba(99, 102, 241, 0.25);
+  background: #ffffff;
   transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.venture-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .venture-card__logo {
-  width: 4rem;
-  height: 4rem;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
-  overflow: hidden;
-}
-
-.venture-card__logo--placeholder {
-  background:
-    radial-gradient(circle at center, color-mix(in srgb, var(--accent) 20%, transparent), transparent),
-    var(--bg-soft);
-}
-
-.venture-card__logo img {
-  width: 70%;
-  height: 70%;
+  max-width: 8.5rem;
+  max-height: 2.75rem;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 
-.venture-card__role {
-  display: inline-block;
-  margin-bottom: 0.35rem;
+.venture-card__num {
+  font-family: var(--font-display);
   font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+.venture-card__role {
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
 .venture-card__name {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
 .venture-card__description {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--text-muted);
 }
 
 .venture-card__link {
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--accent-2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.2s ease;
 }
 
 .venture-card__link:hover {

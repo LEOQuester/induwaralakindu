@@ -7,8 +7,8 @@ export const companies = [
     role: 'CEO & Founder',
     description:
       'A software company focused on building intelligent solutions — custom development, agentic AI, and enterprise consulting.',
-    logo: media.galvanprimeLogo,
-    url: 'https://galvanprime.com',
+    logo: media.companies.galvanprime,
+    url: 'https://galvanprime.lk',
     accent: '#6ee7b7',
   },
   {
@@ -17,7 +17,7 @@ export const companies = [
     role: 'Founder & Lead Instructor',
     description:
       'ICT education platform guiding students through structured learning with academic depth and practical engineering insight.',
-    logo: media.primeictLogo,
+    logo: media.companies.primeict,
     url: 'https://primeict.lk',
     accent: '#60a5fa',
   },
