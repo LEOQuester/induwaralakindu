@@ -1,6 +1,8 @@
 import { profile } from '../data/profile.js';
+import { social } from '../data/social.js';
 import { renderModelViewer } from '../components/model-viewer.js';
 import { renderMarquee } from '../components/marquee.js';
+import { renderSocialLinks } from '../components/social-icons.js';
 
 const stats = [
   { value: '4th', label: 'Legathon global' },
@@ -53,6 +55,11 @@ export function renderHero() {
           <div class="hero__actions reveal reveal--delay-5">
             <a href="#work" class="btn btn--primary">Explore Work</a>
             <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          </div>
+
+          <div class="hero__social reveal reveal--delay-5">
+            <p class="hero__social-label">Connect with me</p>
+            ${renderSocialLinks(social, { className: 'hero__social-icons social-icons social-icons--brand' })}
           </div>
         </div>
 

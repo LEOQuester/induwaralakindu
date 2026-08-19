@@ -5,7 +5,7 @@ export const profile = {
   shortName: 'Induwara',
   tagline: 'Software Engineer · Web Developer · Colombo, Sri Lanka',
   headline:
-    'Leading software engineer in Colombo — custom web development, AI systems, and enterprise software for Sri Lankan businesses.',
+    'Custom web development, AI systems, and enterprise software — built in Colombo for teams that need things to work.',
   bio: `Colombo-based software engineer and web developer with 12+ years of coding experience. As CEO of Galvanprime, I deliver custom web development services, intelligent systems, and enterprise software across Sri Lanka — from Laravel and Django platforms to AI-powered products. Also founder of PrimeICT, guiding the next generation of developers.`,
   portrait: media.profile,
   roles: [

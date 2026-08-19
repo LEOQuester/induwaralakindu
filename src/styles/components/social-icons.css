@@ -61,6 +61,55 @@
   background: #eef2ff;
 }
 
+/* Brand-colored variant — icons show platform colors by default */
+.social-icons--brand {
+  gap: 0.85rem;
+}
+
+.social-icons--brand .social-icons__link {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: none;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+}
+
+.social-icons--brand .social-icons__link svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.social-icons--brand .social-icons__link--linkedin {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0a66c2, #004182);
+}
+
+.social-icons--brand .social-icons__link--github {
+  color: #ffffff;
+  background: linear-gradient(135deg, #24292f, #0d1117);
+}
+
+.social-icons--brand .social-icons__link--instagram {
+  color: #ffffff;
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.social-icons--brand .social-icons__link--youtube {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.social-icons--brand .social-icons__link--primeict,
+.social-icons--brand .social-icons__link--galvanprime {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+}
+
+.social-icons--brand .social-icons__link:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  filter: brightness(1.08);
+}
+
 .contact__social.social-icons {
   margin-top: 0.5rem;
 }
