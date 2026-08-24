@@ -29,13 +29,14 @@ export function renderExploreMore() {
         <span class="section__eyebrow">Explore</span>
         <h2 class="explore-more__title">More than a one-page scroll.</h2>
       </div>
-      <div class="explore-more__grid">
+      <div class="explore-more__grid" data-stagger-grid>
         ${links
           .map(
             (link, index) => `
           <a
             href="${link.href}"
-            class="explore-card reveal"
+            class="explore-card"
+            data-tilt
             style="--accent: ${link.accent}; --index: ${index}"
           >
             <span class="explore-card__eyebrow">${link.eyebrow}</span>

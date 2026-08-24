@@ -69,13 +69,14 @@ export function renderContactPage() {
         </div>
       </div>
 
-      <div class="contact-page__lanes">
+      <div class="contact-page__lanes" data-stagger-grid>
         ${channels
           .map(
             (channel, index) => `
           <a
             href="${channel.href}"
-            class="contact-lane contact-lane--${channel.tone} reveal"
+            class="contact-lane contact-lane--${channel.tone}"
+            data-tilt
             style="--index: ${index}"
             ${channel.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
           >

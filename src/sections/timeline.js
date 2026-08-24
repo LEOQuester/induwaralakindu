@@ -14,12 +14,12 @@ export function renderTimeline() {
         </div>
       </div>
 
-      <div class="journey-list">
+      <div class="journey-list" data-stagger-grid>
         ${timeline
           .map(
             (item, index) => `
           <article
-            class="journey-item reveal ${item.highlight ? 'journey-item--highlight' : ''}"
+            class="journey-item ${item.highlight ? 'journey-item--highlight' : ''}"
             style="--index: ${index}"
           >
             <span class="journey-item__num">${String(index + 1).padStart(2, '0')}</span>

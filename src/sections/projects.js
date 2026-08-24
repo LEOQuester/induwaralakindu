@@ -14,11 +14,11 @@ export function renderProjects() {
         </div>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-grid" data-stagger-grid>
         ${projects
           .map(
             (project, index) => `
-          <article class="project-card reveal ${project.featured ? 'project-card--featured' : ''}" style="--index: ${index}">
+          <article class="project-card ${project.featured ? 'project-card--featured' : ''}" data-tilt style="--index: ${index}">
             ${
               project.logo
                 ? `<div class="project-card__logo">

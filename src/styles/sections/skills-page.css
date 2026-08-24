@@ -140,7 +140,6 @@
 }
 
 .skills-zone:hover {
-  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
   box-shadow: var(--shadow-md);
 }

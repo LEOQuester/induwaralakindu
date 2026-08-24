@@ -54,7 +54,7 @@ export function renderAbout({ showHero = false } = {}) {
           </a>
         </div>
 
-        <div class="about__portrait-wrap reveal reveal--delay-2">
+        <div class="about__portrait-wrap reveal reveal--delay-2" data-tilt>
           <img
             src="${profile.portrait}"
             alt="${profile.name} — software engineer and web developer in Colombo, Sri Lanka"
