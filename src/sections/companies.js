@@ -19,11 +19,11 @@ export function renderCompanies() {
           </h2>
         </div>
 
-        <div class="ventures-grid">
+        <div class="ventures-grid" data-stagger-grid>
           ${companies
             .map(
               (company, index) => `
-            <article class="venture-card reveal" style="--accent: ${company.accent}; --index: ${index}">
+            <article class="venture-card" data-tilt style="--accent: ${company.accent}; --index: ${index}">
               <div class="venture-card__header">
                 ${
                   company.logo

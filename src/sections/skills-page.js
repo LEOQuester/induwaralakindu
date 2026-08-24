@@ -42,12 +42,13 @@ export function renderSkillsPage() {
         </ul>
       </div>
 
-      <div class="skills-page__featured">
+      <div class="skills-page__featured" data-stagger-grid>
         ${featuredGroups
           .map(
             (group, index) => `
           <article
-            class="skills-zone skills-zone--featured reveal"
+            class="skills-zone skills-zone--featured"
+            data-tilt
             style="--accent: ${group.accent}; --index: ${index}"
           >
             <div class="skills-zone__header">
@@ -72,12 +73,13 @@ export function renderSkillsPage() {
           .join('')}
       </div>
 
-      <div class="skills-page__bento">
+      <div class="skills-page__bento" data-stagger-grid>
         ${otherGroups
           .map(
             (group, index) => `
           <article
-            class="skills-zone reveal"
+            class="skills-zone"
+            data-tilt
             style="--accent: ${group.accent}; --index: ${index + featuredGroups.length}"
           >
             <div class="skills-zone__header">

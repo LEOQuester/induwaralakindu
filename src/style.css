@@ -2,6 +2,7 @@
 @import './styles/base/reset.css';
 @import './styles/base/typography.css';
 @import './styles/utilities/animations.css';
+@import './styles/utilities/motion.css';
 @import './styles/components/buttons.css';
 @import './styles/components/navbar.css';
 @import './styles/components/cards.css';

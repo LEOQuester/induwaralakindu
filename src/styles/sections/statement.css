@@ -1,4 +1,6 @@
 .statement {
+  position: relative;
+  overflow: hidden;
   padding: clamp(5rem, 12vw, 9rem) 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -6,6 +8,8 @@
 }
 
 .statement__inner {
+  position: relative;
+  z-index: 1;
   width: var(--container);
   margin: 0 auto;
   padding: 0 1.25rem;

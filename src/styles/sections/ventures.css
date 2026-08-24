@@ -20,7 +20,6 @@
 .venture-card:hover {
   border-color: rgba(99, 102, 241, 0.25);
   background: #ffffff;
-  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 

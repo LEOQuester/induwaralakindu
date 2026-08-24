@@ -1,7 +1,8 @@
 .page-hero {
   position: relative;
-  padding: calc(var(--nav-height) + 4rem) 0 3rem;
   overflow: hidden;
+  min-height: 42vh;
+  padding: calc(var(--nav-height) + 4rem) 0 3rem;
 }
 
 .page-hero__inner {
@@ -34,9 +35,11 @@
   display: block;
   font-style: italic;
   background: var(--gradient-hero);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: shimmer-text 4s linear infinite;
 }
 
 .page-hero__lead {
