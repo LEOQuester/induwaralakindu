@@ -1,0 +1,21 @@
+import { renderNavbar, initNavbar } from '../components/navbar.js';
+import { renderFooter } from '../components/footer.js';
+import { initLenis, initScrollReveal, initSmoothScroll, initSplitLines } from '../utils/scroll.js';
+import { initSeo } from '../utils/seo.js';
+
+export function renderPage({ mainContent, currentPage }) {
+  return `
+    ${renderNavbar({ currentPage })}
+    <main>${mainContent}</main>
+    ${renderFooter()}
+  `;
+}
+
+export function initCommonPage(pageKey, { smoothScroll = true } = {}) {
+  initLenis();
+  initSeo(pageKey);
+  initNavbar();
+  if (smoothScroll) initSmoothScroll();
+  initScrollReveal();
+  initSplitLines();
+}

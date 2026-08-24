@@ -1,10 +1,26 @@
 import { profile } from '../data/profile.js';
-import { skills } from '../data/skills.js';
 import { education } from '../data/education.js';
+import { renderPageHero } from './page-hero.js';
+import { renderPageCta } from './page-cta.js';
 
-export function renderAbout() {
+export function renderAbout({ showHero = false } = {}) {
+  const hero = showHero
+    ? renderPageHero({
+        eyebrow: 'About',
+        title: 'Engineer, founder,',
+        titleAccent: 'educator.',
+        lead: profile.bio,
+        index: '01',
+      })
+    : '';
+
   return `
-    <section id="about" class="about section">
+    ${hero}
+    <section id="about" class="about section ${showHero ? 'about--page' : ''}">
+      ${
+        showHero
+          ? ''
+          : `
       <div class="about__top">
         <div class="section__index reveal">03</div>
         <div class="section__header reveal">
@@ -17,10 +33,12 @@ export function renderAbout() {
           </h2>
         </div>
       </div>
+      `
+      }
 
       <div class="about__grid">
         <div class="about__bio reveal">
-          <p class="about__lead">${profile.bio}</p>
+          ${showHero ? '' : `<p class="about__lead">${profile.bio}</p>`}
           <div class="about__meta">
             <div class="about__meta-item">
               <span class="about__meta-label">Based in</span>
@@ -81,22 +99,18 @@ export function renderAbout() {
             .join('')}
         </div>
       </div>
-
-      <div class="skills-grid">
-        ${skills
-          .map(
-            (group, index) => `
-          <article class="skill-card reveal" style="--index: ${index}">
-            <span class="skill-card__num">${String(index + 1).padStart(2, '0')}</span>
-            <h3 class="skill-card__title">${group.category}</h3>
-            <ul class="skill-card__list">
-              ${group.items.map((item) => `<li>${item}</li>`).join('')}
-            </ul>
-          </article>
-        `,
-          )
-          .join('')}
-      </div>
     </section>
+
+    ${
+      showHero
+        ? renderPageCta({
+            eyebrow: 'Skills',
+            title: 'Want the full toolkit?',
+            text: 'Explore the languages, frameworks, AI stack, and design tools I work with every day.',
+            primary: { href: '/skills.html', label: 'View Skills' },
+            secondary: { href: '/contact.html', label: 'Get in Touch' },
+          })
+        : ''
+    }
   `;
 }
