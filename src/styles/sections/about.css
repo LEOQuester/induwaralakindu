@@ -206,10 +206,12 @@
   text-align: right;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+.about--page {
+  padding-top: 2rem;
+}
+
+.about--page .about__top {
+  display: none;
 }
 
 @media (min-width: 900px) {

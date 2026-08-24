@@ -8,7 +8,12 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      input: 'index.html',
+      input: {
+        main: 'index.html',
+        about: 'about.html',
+        skills: 'skills.html',
+        contact: 'contact.html',
+      },
     },
   },
 });

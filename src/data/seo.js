@@ -16,7 +16,7 @@ export const seo = {
   title: 'Induwara Lakindu | Software Engineer & Web Developer in Colombo, Sri Lanka',
   titleShort: 'Induwara Lakindu — AI Engineer & CEO',
   description:
-    'Induwara Lakindu is a leading software engineer and web developer in Colombo, Sri Lanka. CEO of Galvanprime — custom web development, AI solutions, Laravel, Django, and enterprise software services.',
+    'Induwara Lakindu is a software engineer and web developer in Colombo, Sri Lanka. CEO of Galvanprime — custom web development, AI solutions, Laravel, Django, and enterprise software services.',
   keywords: [
     'Induwara Lakindu',
     'Induwara Lakindu software engineer',
@@ -40,8 +40,36 @@ export const seo = {
   ogImageAlt: 'Induwara Lakindu — software engineer and ICT educator in Colombo, Sri Lanka',
 };
 
-export function getStructuredData() {
+export const pageSeo = {
+  home: {
+    ...seo,
+    path: '/',
+  },
+  about: {
+    title: 'About | Induwara Lakindu — Software Engineer in Colombo',
+    description:
+      'Learn about Induwara Lakindu — software engineer, CEO of Galvanprime, founder of PrimeICT, and ICT educator based in Colombo, Sri Lanka.',
+    path: '/about.html',
+  },
+  skills: {
+    title: 'Skills & Stack | Induwara Lakindu',
+    description:
+      'Technical skills across Python, Java, AI/ML, React, Next.js, FastAPI, Spring Boot, PostgreSQL, Docker, and more — full-stack engineering from Colombo.',
+    path: '/skills.html',
+  },
+  contact: {
+    title: 'Contact | Induwara Lakindu',
+    description:
+      'Get in touch with Induwara Lakindu for custom web development, AI systems, and enterprise software in Colombo. Email, WhatsApp, or phone.',
+    path: '/contact.html',
+  },
+};
+
+export function getStructuredData(pageKey = 'home') {
   const sameAs = social.map((item) => item.url);
+  const page = pageSeo[pageKey] ?? pageSeo.home;
+  const path = page.path ?? '/';
+  const pageUrl = `${site.url}${path === '/' ? '' : path}`;
 
   return {
     '@context': 'https://schema.org',
@@ -97,7 +125,8 @@ export function getStructuredData() {
           'Django',
           'React',
           'Next.js',
-          'Robotics',
+          'FastAPI',
+          'Spring Boot',
           'Computer Vision',
         ],
         sameAs,
@@ -113,10 +142,10 @@ export function getStructuredData() {
       },
       {
         '@type': 'WebPage',
-        '@id': `${site.url}/#webpage`,
-        url: site.url,
-        name: seo.title,
-        description: seo.description,
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: page.title ?? seo.title,
+        description: page.description ?? seo.description,
         isPartOf: { '@id': `${site.url}/#website` },
         about: { '@id': `${site.url}/#person` },
         inLanguage: site.language,
