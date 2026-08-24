@@ -44,13 +44,13 @@ export const projects = [  {
     link: 'https://oneliquidate.com',
   },
   {
-    id: 'tashoauto',
-    title: 'Tasho Auto',
+    id: 'tashiauto',
+    title: 'tashiauto.com',
     tagline: 'Automotive business website',
-    description: 'Professional web presence and digital platform for Tasho Auto.',
+    description: 'Professional web presence and digital platform for tashiauto.com.',
     tags: ['Web App', 'Business'],
-    brand: 'Tasho Auto',
-    link: 'https://tashoauto.com',
+    brand: 'tashiauto.com',
+    link: 'https://tashiauto.com',
   },
   {
     id: 'travelzone',
