@@ -26,8 +26,12 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.12);
+  color: rgba(79, 70, 229, 0.14);
   padding-top: 0.15rem;
+}
+
+.timeline__item:hover .timeline__index {
+  color: rgba(79, 70, 229, 0.28);
 }
 
 .timeline__year {
