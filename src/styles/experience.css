@@ -200,6 +200,18 @@ body::before {
     linear-gradient(to top, #07080d 0%, transparent 28%);
 }
 
+.hero-scene__loader {
+  background:
+    radial-gradient(circle at 72% 45%, rgba(115, 231, 255, 0.09), transparent 24rem),
+    #07080d;
+}
+
+.hero-scene__loader-ring {
+  border-color: rgba(184, 255, 87, 0.14);
+  border-top-color: var(--accent);
+  box-shadow: 0 0 24px rgba(184, 255, 87, 0.14);
+}
+
 .hero__mesh {
   opacity: 0.22;
   background-image:
@@ -273,7 +285,7 @@ body::before {
 
 .hero__headline {
   max-width: 34rem;
-  color: var(--text-muted);
+  color: #b9bcc7;
 }
 
 .hero__stats {
