@@ -9,10 +9,18 @@ export function renderAmbientScene() {
 }
 
 export function initAmbientScene() {
-  const container = document.querySelector('[data-ambient-scene]');
-  const canvas = document.querySelector('[data-ambient-canvas]');
-  if (!container || !canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const containers = document.querySelectorAll('[data-ambient-scene]');
+  if (!containers.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  containers.forEach((container) => {
+    const canvas = container.querySelector('[data-ambient-canvas]');
+    if (!canvas) return;
+
+    initSingleAmbientScene(container, canvas);
+  });
+}
+
+function initSingleAmbientScene(container, canvas) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
   camera.position.z = 14;
@@ -155,14 +163,4 @@ export function initAmbientScene() {
   };
 
   animate();
-
-  return () => {
-    observer.disconnect();
-    window.removeEventListener('resize', resize);
-    window.removeEventListener('pointermove', onPointerMove);
-    if (animationId) cancelAnimationFrame(animationId);
-    geometry.dispose();
-    lineGeometry.dispose();
-    renderer.dispose();
-  };
 }

@@ -7,13 +7,14 @@ export function renderPageHero({
   lead,
   index = '01',
   className = '',
+  id = '',
 }) {
   const accentLine = titleAccent
     ? `<em class="page-hero__accent">${titleAccent}</em>`
     : '';
 
   return `
-    <section class="page-hero ${className}">
+    <section class="page-hero ${className}"${id ? ` id="${id}"` : ''}>
       ${renderAmbientScene()}
       <div class="page-hero__inner">
         <div class="page-hero__index reveal">${index}</div>

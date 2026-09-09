@@ -4,9 +4,9 @@ import { initLenis, initScrollReveal, initSmoothScroll, initSplitLines } from '.
 import { initSeo } from '../utils/seo.js';
 import { initMotion } from '../utils/motion.js';
 
-export function renderPage({ mainContent, currentPage }) {
+export function renderPage({ mainContent }) {
   return `
-    ${renderNavbar({ currentPage })}
+    ${renderNavbar()}
     <main>${mainContent}</main>
     ${renderFooter()}
   `;

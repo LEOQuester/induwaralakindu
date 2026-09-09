@@ -45,24 +45,6 @@ export const pageSeo = {
     ...seo,
     path: '/',
   },
-  about: {
-    title: 'About | Induwara Lakindu — Software Engineer in Colombo',
-    description:
-      'Learn about Induwara Lakindu — software engineer, CEO of Galvanprime, founder of PrimeICT, and ICT educator based in Colombo, Sri Lanka.',
-    path: '/about.html',
-  },
-  skills: {
-    title: 'Skills & Stack | Induwara Lakindu',
-    description:
-      'Technical skills across Python, Java, AI/ML, React, Next.js, FastAPI, Spring Boot, PostgreSQL, Docker, and more — full-stack engineering from Colombo.',
-    path: '/skills.html',
-  },
-  contact: {
-    title: 'Contact | Induwara Lakindu',
-    description:
-      'Get in touch with Induwara Lakindu for custom web development, AI systems, and enterprise software in Colombo. Email, WhatsApp, or phone.',
-    path: '/contact.html',
-  },
 };
 
 export function getStructuredData(pageKey = 'home') {

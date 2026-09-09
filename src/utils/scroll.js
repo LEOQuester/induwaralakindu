@@ -133,12 +133,18 @@ export function initParallax() {
 }
 
 export function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
-      const id = anchor.getAttribute('href');
-      if (!id || id === '#') return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
 
-      const target = document.querySelector(id);
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+
+      const path = href.slice(0, hashIndex);
+      if (path && path !== '/' && path !== window.location.pathname) return;
+
+      const target = document.querySelector(href.slice(hashIndex));
       if (!target) return;
 
       event.preventDefault();

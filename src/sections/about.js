@@ -11,12 +11,13 @@ export function renderAbout({ showHero = false } = {}) {
         titleAccent: 'educator.',
         lead: profile.bio,
         index: '01',
+        id: 'about',
       })
     : '';
 
   return `
     ${hero}
-    <section id="about" class="about section ${showHero ? 'about--page' : ''}">
+    <section ${showHero ? '' : 'id="about"'} class="about section ${showHero ? 'about--page' : ''}">
       ${
         showHero
           ? ''
@@ -112,8 +113,8 @@ export function renderAbout({ showHero = false } = {}) {
             eyebrow: 'Skills',
             title: 'Want the full toolkit?',
             text: 'Explore the languages, frameworks, AI stack, and design tools I work with every day.',
-            primary: { href: '/skills.html', label: 'View Skills' },
-            secondary: { href: '/contact.html', label: 'Get in Touch' },
+            primary: { href: '/#skills', label: 'View Skills' },
+            secondary: { href: '/#contact', label: 'Get in Touch' },
           })
         : ''
     }

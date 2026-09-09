@@ -16,6 +16,7 @@ export function renderSkillsPage() {
       titleAccent: 'when it matters.',
       lead: 'Not a checkbox resume — a living toolkit spanning AI, full-stack engineering, and product design.',
       index: '01',
+      id: 'skills',
     })}
 
     <section class="skills-page section">
