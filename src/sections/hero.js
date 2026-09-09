@@ -54,7 +54,7 @@ export function renderHero() {
 
           <div class="hero__actions reveal reveal--delay-5">
             <a href="/#work" class="btn btn--primary btn--shine" data-magnetic>Explore Work</a>
-            <a href="/contact.html" class="btn btn--ghost" data-magnetic>Get in Touch</a>
+            <a href="/#contact" class="btn btn--ghost" data-magnetic>Get in Touch</a>
           </div>
 
           <div class="hero__social reveal reveal--delay-5">

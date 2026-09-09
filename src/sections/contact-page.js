@@ -54,6 +54,7 @@ export function renderContactPage() {
       lead: 'No contact form maze — pick a lane below and reach out directly. I read every message.',
       index: '01',
       className: 'page-hero--contact',
+      id: 'contact',
     })}
 
     <section class="contact-page section">
