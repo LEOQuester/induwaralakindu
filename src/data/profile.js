@@ -22,5 +22,6 @@ export const profile = {
   phoneDisplay: '+94 72 494 3352',
   whatsapp: 'https://wa.me/94724943352',
   tel: 'tel:+94724943352',
-  resume: '/assets/documents/induwara-lakindu-cv.pdf',
+  resume:
+    'https://drive.google.com/uc?export=download&id=1W445ThTKV9W7_M7MGAg_xS-GkEyXtjlH',
 };
