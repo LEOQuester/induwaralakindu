@@ -183,13 +183,19 @@
   padding: 1.25rem 1.5rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 255, 0.75));
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about__role-card:hover {
-  border-color: var(--border-strong);
-  transform: translateX(4px);
+  border-color: rgba(79, 70, 229, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.1);
 }
 
 .about__role-label {

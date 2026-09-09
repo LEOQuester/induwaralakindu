@@ -1,7 +1,7 @@
 import { profile } from '../data/profile.js';
 import { social } from '../data/social.js';
 import { renderSocialLinks, renderSocialIcon } from '../components/social-icons.js';
-import { renderPageHero } from './page-hero.js';
+import { renderSectionHeader } from '../components/section-header.js';
 
 const channels = [
   {
@@ -47,17 +47,16 @@ const helpTopics = [
 
 export function renderContactPage() {
   return `
-    ${renderPageHero({
-      eyebrow: 'Contact',
-      title: "Let's build",
-      titleAccent: 'something real.',
-      lead: 'No contact form maze — pick a lane below and reach out directly. I read every message.',
-      index: '01',
-      className: 'page-hero--contact',
-      id: 'contact',
-    })}
+    <section id="contact" class="contact-page section flow-section flow-section--finale">
+      ${renderSectionHeader({
+        index: '08',
+        eyebrow: 'Contact',
+        title: "Let's build",
+        titleAccent: 'something real.',
+        lead: 'No contact form maze — pick a lane below and reach out directly. I read every message.',
+        className: 'flow-header--finale',
+      })}
 
-    <section class="contact-page section">
       <div class="contact-page__status reveal">
         <span class="contact-page__status-dot"></span>
         <div>
@@ -102,7 +101,7 @@ export function renderContactPage() {
       <div class="contact-page__grid reveal">
         <div class="contact-page__topics">
           <span class="section__eyebrow">What I can help with</span>
-          <h2 class="contact-page__topics-title">Bring the problem.<br />I'll bring the stack.</h2>
+          <h3 class="contact-page__topics-title">Bring the problem.<br />I'll bring the stack.</h3>
           <ul class="contact-page__topic-list">
             ${helpTopics.map((topic) => `<li>${topic}</li>`).join('')}
           </ul>
@@ -118,7 +117,7 @@ export function renderContactPage() {
 
         <div class="contact-page__social-card">
           <span class="section__eyebrow">Social</span>
-          <h2 class="contact-page__social-title">Follow the journey.</h2>
+          <h3 class="contact-page__social-title">Follow the journey.</h3>
           <p class="contact-page__social-copy">
             Projects, builds, and behind-the-scenes from Galvanprime and PrimeICT.
           </p>
@@ -144,21 +143,21 @@ export function renderContactPage() {
           <li>
             <span class="contact-page__step-num">01</span>
             <div>
-              <h3>You reach out</h3>
+              <h4>You reach out</h4>
               <p>Email, WhatsApp, or a call — whatever feels right.</p>
             </div>
           </li>
           <li>
             <span class="contact-page__step-num">02</span>
             <div>
-              <h3>We align on scope</h3>
+              <h4>We align on scope</h4>
               <p>A quick conversation to understand goals, timeline, and fit.</p>
             </div>
           </li>
           <li>
             <span class="contact-page__step-num">03</span>
             <div>
-              <h3>We build</h3>
+              <h4>We build</h4>
               <p>From prototype to production — with clear communication throughout.</p>
             </div>
           </li>

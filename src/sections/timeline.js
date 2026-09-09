@@ -4,7 +4,7 @@ export function renderTimeline() {
   return `
     <section id="journey" class="journey section">
       <div class="journey__top">
-        <div class="section__index reveal">05</div>
+        <div class="section__index reveal">04</div>
         <div class="section__header reveal">
           <span class="section__eyebrow">Journey</span>
           <h2 class="section__title section__title--display">

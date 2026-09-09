@@ -4,7 +4,7 @@ export function renderProjects() {
   return `
     <section id="work" class="work section">
       <div class="work__top">
-        <div class="section__index reveal">06</div>
+        <div class="section__index reveal">05</div>
         <div class="section__header reveal">
           <span class="section__eyebrow">Selected Work</span>
           <h2 class="section__title section__title--display">

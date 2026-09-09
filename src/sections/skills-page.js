@@ -1,6 +1,6 @@
 import { skillCategories } from '../data/skills.js';
 import { techStack } from '../data/tech.js';
-import { renderPageHero } from './page-hero.js';
+import { renderSectionHeader } from '../components/section-header.js';
 import { renderMarquee } from '../components/marquee.js';
 
 const coreLanguages = skillCategories.find((group) => group.id === 'languages')?.items ?? [];
@@ -10,16 +10,15 @@ export function renderSkillsPage() {
   const otherGroups = skillCategories.filter((group) => !group.featured);
 
   return `
-    ${renderPageHero({
-      eyebrow: 'Skills & Stack',
-      title: 'Tools I reach for',
-      titleAccent: 'when it matters.',
-      lead: 'Not a checkbox resume — a living toolkit spanning AI, full-stack engineering, and product design.',
-      index: '01',
-      id: 'skills',
-    })}
+    <section id="skills" class="skills-page section flow-section flow-section--skills">
+      ${renderSectionHeader({
+        index: '07',
+        eyebrow: 'Skills & Stack',
+        title: 'Tools I reach for',
+        titleAccent: 'when it matters.',
+        lead: 'Not a checkbox resume — a living toolkit spanning AI, full-stack engineering, and product design.',
+      })}
 
-    <section class="skills-page section">
       <div class="skills-page__core reveal">
         <div class="skills-page__core-header">
           <span class="skills-page__label">Core languages</span>
@@ -55,7 +54,7 @@ export function renderSkillsPage() {
             <div class="skills-zone__header">
               <span class="skills-zone__num">${String(index + 1).padStart(2, '0')}</span>
               <div>
-                <h2 class="skills-zone__title">${group.category}</h2>
+                <h3 class="skills-zone__title">${group.category}</h3>
                 <p class="skills-zone__tagline">${group.tagline}</p>
               </div>
             </div>
@@ -86,7 +85,7 @@ export function renderSkillsPage() {
             <div class="skills-zone__header">
               <span class="skills-zone__num">${String(index + featuredGroups.length + 1).padStart(2, '0')}</span>
               <div>
-                <h2 class="skills-zone__title">${group.category}</h2>
+                <h3 class="skills-zone__title">${group.category}</h3>
                 <p class="skills-zone__tagline">${group.tagline}</p>
               </div>
             </div>
@@ -108,7 +107,7 @@ export function renderSkillsPage() {
       <div class="skills-page__stack reveal">
         <div class="skills-page__stack-header">
           <span class="section__eyebrow">Shipped with</span>
-          <h2 class="skills-page__stack-title">Frameworks &amp; platforms in production.</h2>
+          <h3 class="skills-page__stack-title">Frameworks &amp; platforms in production.</h3>
         </div>
         <div class="stack__grid">
           ${techStack

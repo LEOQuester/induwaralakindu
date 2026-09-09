@@ -193,6 +193,21 @@ export function initStatementMotion() {
   observer.observe(statement);
 }
 
+export function initFlowSections() {
+  const sections = document.querySelectorAll('.flow-section');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('flow-section--active', entry.isIntersecting);
+      });
+    },
+    { threshold: 0.12, rootMargin: '-5% 0px -5% 0px' },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
 export function initMotion() {
   initCursorGlow();
   initScrollProgress();
@@ -201,4 +216,5 @@ export function initMotion() {
   initStaggerGrids();
   initCountUp();
   initStatementMotion();
+  initFlowSections();
 }
