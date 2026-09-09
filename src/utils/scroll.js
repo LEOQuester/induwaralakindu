@@ -1,7 +1,16 @@
 import Lenis from 'lenis';
 
+let lenis = null;
+
+function getScrollOffset() {
+  const navHeight = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue('--nav-height'),
+  );
+  return -((navHeight || 4.75) * 16 + 16);
+}
+
 export function initLenis() {
-  const lenis = new Lenis({
+  lenis = new Lenis({
     lerp: 0.09,
     smoothWheel: true,
   });
@@ -132,6 +141,21 @@ export function initParallax() {
   onScroll();
 }
 
+function scrollToHash(hash, { immediate = false } = {}) {
+  if (!hash || hash === '#') return;
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  const offset = hash === '#hero' ? 0 : getScrollOffset();
+
+  if (lenis) {
+    lenis.scrollTo(target, { offset, immediate });
+  } else {
+    target.scrollIntoView({ behavior: immediate ? 'auto' : 'smooth', block: 'start' });
+  }
+}
+
 export function initSmoothScroll() {
   document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -144,11 +168,18 @@ export function initSmoothScroll() {
       const path = href.slice(0, hashIndex);
       if (path && path !== '/' && path !== window.location.pathname) return;
 
-      const target = document.querySelector(href.slice(hashIndex));
+      const hash = href.slice(hashIndex);
+      const target = document.querySelector(hash);
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToHash(hash);
     });
   });
+
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      scrollToHash(window.location.hash, { immediate: true });
+    });
+  }
 }

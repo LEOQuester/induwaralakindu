@@ -1,17 +1,17 @@
 import { profile } from '../data/profile.js';
 
 const navLinks = [
-  { href: '/#hero', label: 'Home', section: 'hero' },
-  { href: '/#about', label: 'About', section: 'about' },
-  { href: '/#skills', label: 'Skills', section: 'skills' },
-  { href: '/#work', label: 'Work', section: 'work' },
-  { href: '/#contact', label: 'Contact', section: 'contact' },
+  { href: '#hero', label: 'Home', section: 'hero' },
+  { href: '#about', label: 'About', section: 'about' },
+  { href: '#skills', label: 'Skills', section: 'skills' },
+  { href: '#work', label: 'Work', section: 'work' },
+  { href: '#contact', label: 'Contact', section: 'contact' },
 ];
 
 export function renderNavbar() {
   return `
     <header class="navbar" data-navbar>
-      <a href="/#hero" class="navbar__brand" aria-label="${profile.name} — Home">
+      <a href="#hero" class="navbar__brand" aria-label="${profile.name} — Home">
         <img
           src="${profile.portrait}"
           alt="${profile.name}"
@@ -29,7 +29,7 @@ export function renderNavbar() {
           )
           .join('')}
       </nav>
-      <a href="/#contact" class="btn btn--primary navbar__cta btn--shine" data-magnetic>Let's Talk</a>
+      <a href="#contact" class="btn btn--primary navbar__cta btn--shine" data-magnetic>Let's Talk</a>
       <button class="navbar__toggle" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span>
       </button>
