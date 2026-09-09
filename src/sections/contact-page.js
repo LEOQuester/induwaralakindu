@@ -105,7 +105,14 @@ export function renderContactPage() {
           <ul class="contact-page__topic-list">
             ${helpTopics.map((topic) => `<li>${topic}</li>`).join('')}
           </ul>
-          <a href="${profile.resume}" class="btn btn--outline" download>Download CV</a>
+          <a
+            href="${profile.resume}"
+            class="btn btn--outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download CV
+          </a>
         </div>
 
         <div class="contact-page__social-card">
