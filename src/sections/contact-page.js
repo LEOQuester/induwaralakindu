@@ -12,7 +12,7 @@ const channels = [
     hint: 'Best for detailed briefs, proposals, and project docs.',
     cta: 'Send an email',
     tone: 'indigo',
-    icon: '✉',
+    icon: 'email',
   },
   {
     id: 'whatsapp',
@@ -22,7 +22,7 @@ const channels = [
     hint: 'Fastest way to get a reply — great for quick questions.',
     cta: 'Open WhatsApp',
     tone: 'green',
-    icon: '💬',
+    icon: 'whatsapp',
     external: true,
   },
   {
@@ -33,7 +33,7 @@ const channels = [
     hint: 'Prefer talking it through? Call or request a callback.',
     cta: 'Call now',
     tone: 'sky',
-    icon: '📞',
+    icon: 'phone',
   },
 ];
 
@@ -80,7 +80,7 @@ export function renderContactPage() {
             style="--index: ${index}"
             ${channel.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
           >
-            <span class="contact-lane__icon" aria-hidden="true">${channel.icon}</span>
+            <span class="contact-lane__icon">${renderSocialIcon(channel.icon)}</span>
             <div class="contact-lane__body">
               <span class="contact-lane__label">${channel.label}</span>
               <span class="contact-lane__value">${channel.value}</span>
@@ -88,9 +88,7 @@ export function renderContactPage() {
             </div>
             <span class="contact-lane__cta">
               ${channel.cta}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6"/>
-              </svg>
+              ${renderSocialIcon('arrow')}
             </span>
           </a>
         `,
