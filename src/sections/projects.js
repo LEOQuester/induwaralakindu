@@ -1,4 +1,14 @@
 import { projects } from '../data/projects.js';
+import { renderSocialIcon } from '../components/social-icons.js';
+
+const projectIcons = {
+  galvanprime: 'fa-solid fa-brain',
+  primeict: 'fa-solid fa-graduation-cap',
+  eduzone: 'fa-solid fa-building-columns',
+  oneliquidate: 'fa-solid fa-chart-line',
+  tashiauto: 'fa-solid fa-car-side',
+  travelzone: 'fa-solid fa-plane-departure',
+};
 
 export function renderProjects() {
   return `
@@ -19,19 +29,10 @@ export function renderProjects() {
           .map(
             (project, index) => `
           <article class="project-card ${project.featured ? 'project-card--featured' : ''}" data-tilt style="--index: ${index}">
-            ${
-              project.logo
-                ? `<div class="project-card__logo">
-                    <img src="${project.logo}" alt="${project.brand} logo" loading="lazy" />
-                  </div>`
-                : project.image
-                  ? `<div class="project-card__media">
-                    <img src="${project.image}" alt="${project.title}" loading="lazy" />
-                  </div>`
-                  : project.brand
-                    ? `<div class="project-card__brand" aria-hidden="true">${project.brand}</div>`
-                    : ''
-            }
+            <div class="project-card__visual" aria-hidden="true">
+              <i class="${projectIcons[project.id] ?? 'fa-solid fa-code'}"></i>
+              <span>${project.brand}</span>
+            </div>
             <div class="project-card__body">
               <div class="project-card__top">
                 <span class="project-card__num">${String(index + 1).padStart(2, '0')}</span>
@@ -45,7 +46,7 @@ export function renderProjects() {
               ${
                 project.link
                   ? `<a href="${project.link}" class="project-card__link" target="_blank" rel="noopener noreferrer">
-                      Visit project <span aria-hidden="true">→</span>
+                      Visit project ${renderSocialIcon('arrow')}
                     </a>`
                   : ''
               }
