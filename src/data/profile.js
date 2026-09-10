@@ -23,5 +23,5 @@ export const profile = {
   whatsapp: 'https://wa.me/94724943352',
   tel: 'tel:+94724943352',
   resume:
-    'https://drive.google.com/uc?export=download&id=1W445ThTKV9W7_M7MGAg_xS-GkEyXtjlH',
+    'https://drive.google.com/file/d/1W445ThTKV9W7_M7MGAg_xS-GkEyXtjlH/view?usp=drive_link',
 };
