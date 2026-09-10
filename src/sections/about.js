@@ -49,7 +49,12 @@ export function renderAbout({ showHero = false } = {}) {
               <span class="about__meta-value">Galvanprime (Pvt) Ltd</span>
             </div>
           </div>
-          <a href="${profile.resume}" class="btn btn--outline about__cv" download>
+          <a
+            href="${profile.resume}"
+            class="btn btn--outline about__cv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Download CV
           </a>
         </div>
