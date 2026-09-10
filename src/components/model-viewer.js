@@ -16,15 +16,15 @@ export function renderModelViewer() {
 
 function getModelOffsetX() {
   const w = window.innerWidth;
-  if (w < 640) return 0.45;
-  if (w < 1024) return 1.05;
-  return 1.75;
+  if (w < 640) return 0.35;
+  if (w < 1024) return 1.2;
+  return 2.35;
 }
 
 function getViewOffsetX(width) {
   if (width < 640) return 0;
-  if (width < 1024) return width * 0.14;
-  return width * 0.28;
+  if (width < 1024) return -width * 0.1;
+  return -width * 0.24;
 }
 
 export function initModelViewer() {
@@ -41,7 +41,7 @@ export function initModelViewer() {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
   const lookTarget = new THREE.Vector3();
-  const orbit = { radius: 3.35, theta: 0.55, phi: 0.08 };
+  const orbit = { radius: 3.2, theta: -0.35, phi: 0.06 };
   let modelBaseX = getModelOffsetX();
 
   const renderer = new THREE.WebGLRenderer({
