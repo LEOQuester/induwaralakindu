@@ -29,7 +29,18 @@ export function renderNavbar({ currentPage = 'home' } = {}) {
           })
           .join('')}
       </nav>
-      <a href="/contact" class="btn btn--primary navbar__cta">Let's Talk</a>
+      <div class="navbar__actions">
+        <a
+          href="${profile.resume}"
+          class="btn btn--outline navbar__cv"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-nav-action
+        >
+          Download CV
+        </a>
+        <a href="/contact" class="btn btn--primary navbar__cta" data-nav-action>Let's Talk</a>
+      </div>
       <button class="navbar__toggle" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span>
       </button>
@@ -40,7 +51,7 @@ export function renderNavbar({ currentPage = 'home' } = {}) {
 export function initNavbar() {
   const navbar = document.querySelector('[data-navbar]');
   const toggle = document.querySelector('[data-nav-toggle]');
-  const links = document.querySelectorAll('[data-nav-link]');
+  const links = document.querySelectorAll('[data-nav-link], [data-nav-action]');
 
   const onScroll = () => {
     navbar?.classList.toggle('navbar--scrolled', window.scrollY > 32);
