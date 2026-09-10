@@ -15,8 +15,8 @@ app.innerHTML = renderPage({
       eyebrow: 'Contact',
       title: 'Like what you see?',
       text: 'Reach out and let’s talk about what you’re building.',
-      primary: { href: '/contact.html', label: 'Get in Touch' },
-      secondary: { href: '/about.html', label: 'About Me' },
+      primary: { href: '/contact', label: 'Get in Touch' },
+      secondary: { href: '/about', label: 'About Me' },
     })}
   `,
 });

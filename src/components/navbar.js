@@ -2,10 +2,10 @@ import { profile } from '../data/profile.js';
 
 const navLinks = [
   { href: '/', label: 'Home', page: 'home' },
-  { href: '/about.html', label: 'About', page: 'about' },
-  { href: '/skills.html', label: 'Skills', page: 'skills' },
+  { href: '/about', label: 'About', page: 'about' },
+  { href: '/skills', label: 'Skills', page: 'skills' },
   { href: '/#work', label: 'Work', page: 'work' },
-  { href: '/contact.html', label: 'Contact', page: 'contact' },
+  { href: '/contact', label: 'Contact', page: 'contact' },
 ];
 
 export function renderNavbar({ currentPage = 'home' } = {}) {
@@ -29,7 +29,7 @@ export function renderNavbar({ currentPage = 'home' } = {}) {
           })
           .join('')}
       </nav>
-      <a href="/contact.html" class="btn btn--primary navbar__cta">Let's Talk</a>
+      <a href="/contact" class="btn btn--primary navbar__cta">Let's Talk</a>
       <button class="navbar__toggle" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span>
       </button>

@@ -1,21 +1,21 @@
 export function renderExploreMore() {
   const links = [
     {
-      href: '/about.html',
+      href: '/about',
       eyebrow: 'About',
       title: 'The story behind the builds',
       text: 'Background, roles, education, and the journey so far.',
       accent: '#4f46e5',
     },
     {
-      href: '/skills.html',
+      href: '/skills',
       eyebrow: 'Skills',
       title: 'The full toolkit',
       text: 'Languages, AI stack, frameworks, and design tools.',
       accent: '#0ea5e9',
     },
     {
-      href: '/contact.html',
+      href: '/contact',
       eyebrow: 'Contact',
       title: 'Start a conversation',
       text: 'Email, WhatsApp, or call — no forms required.',

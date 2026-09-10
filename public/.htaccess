@@ -1,4 +1,11 @@
-# Multi-page build: serve about.html, skills.html, and contact.html directly.
-# (Replaces legacy single-page Redirect rules that pointed these URLs at /#... hashes.)
-
+# Multi-page portfolio — no hash redirects on .html files.
 DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Clean URLs (use these in the nav so browsers are not stuck on old 301 caches for *.html).
+RewriteRule ^about/?$ about.html [L]
+RewriteRule ^skills/?$ skills.html [L]
+RewriteRule ^contact/?$ contact.html [L]
+</IfModule>
