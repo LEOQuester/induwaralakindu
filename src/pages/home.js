@@ -1,7 +1,6 @@
 import '../style.css';
 
 import { initModelViewer } from '../components/model-viewer.js';
-import { initAmbientScene } from '../components/ambient-scene.js';
 import { renderFlowBridge } from '../components/flow-bridge.js';
 import { renderHero } from '../sections/hero.js';
 import { renderStatement } from '../sections/statement.js';
@@ -24,7 +23,6 @@ const app = document.getElementById('app');
 app.innerHTML = renderPage({
   mainContent: `
     ${renderHero()}
-    ${renderFlowBridge({ label: 'The journey' })}
     ${renderStatement()}
     ${renderAbout()}
     ${renderFlowBridge()}
@@ -42,7 +40,6 @@ app.innerHTML = renderPage({
 
 initCommonPage('home');
 initModelViewer();
-initAmbientScene();
 initSkillsPage();
 initStoryPanels();
 initParallax();

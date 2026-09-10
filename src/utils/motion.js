@@ -218,7 +218,7 @@ export function initHeroTitleWords() {
 }
 
 export function initSectionDecor() {
-  const targets = document.querySelectorAll('.flow-section, .work.section, .statement');
+  const targets = document.querySelectorAll('.flow-section, .work.section');
 
   targets.forEach((section, index) => {
     section.classList.add('section--has-decor');
@@ -258,7 +258,9 @@ export function initSectionIndexParallax() {
 export function initCardHoverGlow() {
   if (prefersReducedMotion() || window.matchMedia('(pointer: coarse)').matches) return;
 
-  document.querySelectorAll('.project-card, .about__role-card, .education-item').forEach((card) => {
+  document
+    .querySelectorAll('.project-card, .about__role-card, .education-item, .statement__pillar')
+    .forEach((card) => {
     card.addEventListener('pointermove', (event) => {
       const rect = card.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width) * 100;
