@@ -11,9 +11,8 @@ export function renderCompanies() {
       </div>
 
       <div class="ventures__inner section">
-        <div class="section__index reveal">06</div>
         <div class="section__header reveal">
-          <span class="section__eyebrow">Ventures</span>
+          <p class="section-label">// 06 — VENTURES</p>
           <h2 class="section__title section__title--display">
             Companies I lead<br />
             <span class="text-dim">and build.</span>

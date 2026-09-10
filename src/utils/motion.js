@@ -271,6 +271,71 @@ export function initCardHoverGlow() {
   });
 }
 
+export function initPageLoader() {
+  if (prefersReducedMotion()) {
+    document.querySelector('[data-page-loader]')?.remove();
+    return;
+  }
+
+  const loader = document.querySelector('[data-page-loader]');
+  const percentEl = document.querySelector('[data-loader-percent]');
+  const barEl = document.querySelector('[data-loader-bar]');
+  if (!loader || !percentEl || !barEl) return;
+
+  const duration = 1200;
+  const start = performance.now();
+
+  const tick = (now) => {
+    const progress = Math.min(1, (now - start) / duration);
+    const eased = 1 - (1 - progress) ** 3;
+    const value = Math.round(eased * 100);
+
+    percentEl.textContent = `${value}%`;
+    barEl.style.width = `${value}%`;
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      loader.classList.add('page-loader--done');
+      setTimeout(() => loader.remove(), 650);
+    }
+  };
+
+  requestAnimationFrame(tick);
+}
+
+export function initHorizontalScroll() {
+  document.querySelectorAll('[data-horizontal-scroll]').forEach((track) => {
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const onPointerDown = (event) => {
+      isDragging = true;
+      track.classList.add('is-dragging');
+      startX = event.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    };
+
+    const onPointerMove = (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      const x = event.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.4;
+    };
+
+    const onPointerUp = () => {
+      isDragging = false;
+      track.classList.remove('is-dragging');
+    };
+
+    track.addEventListener('pointerdown', onPointerDown);
+    track.addEventListener('pointermove', onPointerMove);
+    track.addEventListener('pointerup', onPointerUp);
+    track.addEventListener('pointerleave', onPointerUp);
+  });
+}
+
 export function initFlowSections() {
   const sections = document.querySelectorAll('.flow-section');
 
@@ -287,6 +352,7 @@ export function initFlowSections() {
 }
 
 export function initMotion() {
+  initPageLoader();
   initCursorGlow();
   initScrollProgress();
   initTiltCards();
@@ -296,7 +362,7 @@ export function initMotion() {
   initStatementMotion();
   initFlowSections();
   initHeroTitleWords();
-  initSectionDecor();
   initSectionIndexParallax();
   initCardHoverGlow();
+  initHorizontalScroll();
 }

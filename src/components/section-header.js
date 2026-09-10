@@ -13,9 +13,8 @@ export function renderSectionHeader({
 
   return `
     <header class="flow-header reveal ${className}"${id ? ` id="${id}"` : ''}>
-      <div class="flow-header__index" aria-hidden="true">${index}</div>
+      <p class="section-label" aria-hidden="true">// ${index} — ${eyebrow.toUpperCase()}</p>
       <div class="flow-header__content">
-        <span class="section__eyebrow">${eyebrow}</span>
         <h2 class="section__title section__title--display">
           ${title}${accentBlock}
         </h2>

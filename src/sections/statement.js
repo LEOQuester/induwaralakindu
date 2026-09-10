@@ -43,7 +43,7 @@ export function renderStatement() {
     <section id="mission" class="statement section" aria-label="Mission and focus areas">
       <div class="statement__inner">
         <div class="statement__intro reveal">
-          <p class="statement__eyebrow">Mission</p>
+          <p class="section-label">// 01 — MISSION</p>
           <h2 class="statement__title">
             <span class="statement__line">Code powers</span>
             <span class="statement__line statement__line--accent">intelligence.</span>

@@ -1,3 +1,29 @@
+.project-card__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 8rem;
+  padding: 1.75rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(145deg, #eef2ff, #f0f9ff);
+}
+
+.project-card__visual i {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.project-card__visual span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
