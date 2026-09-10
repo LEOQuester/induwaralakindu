@@ -29,7 +29,7 @@ export function renderNavbar({ currentPage = 'home' } = {}) {
           })
           .join('')}
       </nav>
-      <a href="/contact.html" class="btn btn--primary navbar__cta">Let's Talk</a>
+      <a href="/contact.html" class="btn btn--primary navbar__cta btn--shine" data-magnetic>Let's Talk</a>
       <button class="navbar__toggle" type="button" aria-label="Open menu" data-nav-toggle>
         <span></span><span></span>
       </button>

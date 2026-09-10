@@ -1,6 +1,7 @@
 export function renderStatement() {
   return `
     <section class="statement" aria-label="Mission statement">
+      <div class="statement__mesh" aria-hidden="true"></div>
       <div class="statement__inner">
         <p class="statement__eyebrow reveal">Mission</p>
         <h2 class="statement__title reveal">

@@ -1,3 +1,5 @@
+import { renderAmbientScene } from '../components/ambient-scene.js';
+
 export function renderPageHero({
   eyebrow,
   title,
@@ -12,6 +14,7 @@ export function renderPageHero({
 
   return `
     <section class="page-hero ${className}">
+      ${renderAmbientScene()}
       <div class="page-hero__inner">
         <div class="page-hero__index reveal">${index}</div>
         <div class="page-hero__content reveal reveal--delay-1">

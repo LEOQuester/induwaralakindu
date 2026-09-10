@@ -16,7 +16,6 @@
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
   border-color: rgba(99, 102, 241, 0.25);
   box-shadow: var(--shadow-md);
 }

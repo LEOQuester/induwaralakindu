@@ -4,6 +4,7 @@ import { renderSkillsPage, initSkillsPage } from '../sections/skills-page.js';
 import { renderPageCta } from '../sections/page-cta.js';
 import { renderPage, initCommonPage } from '../layout/page.js';
 import { initSceneTransitions } from '../utils/scroll.js';
+import { initAmbientScene } from '../components/ambient-scene.js';
 
 const app = document.getElementById('app');
 
@@ -22,5 +23,6 @@ app.innerHTML = renderPage({
 });
 
 initCommonPage('skills');
+initAmbientScene();
 initSkillsPage();
 initSceneTransitions();

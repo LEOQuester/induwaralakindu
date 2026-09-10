@@ -14,18 +14,21 @@ export function renderTimeline() {
         </div>
       </div>
 
-      <div class="timeline">
+      <div class="journey-list" data-stagger-grid>
         ${timeline
           .map(
             (item, index) => `
-          <article class="timeline__item reveal ${item.highlight ? 'timeline__item--highlight' : ''}" style="--index: ${index}">
-            <div class="timeline__index">${String(index + 1).padStart(2, '0')}</div>
-            <div class="timeline__card">
-              <span class="timeline__year">${item.year}</span>
-              <h3 class="timeline__title">${item.title}</h3>
-              <p class="timeline__subtitle">${item.subtitle}</p>
-              <p class="timeline__description">${item.description}</p>
+          <article
+            class="journey-item ${item.highlight ? 'journey-item--highlight' : ''}"
+            style="--index: ${index}"
+          >
+            <span class="journey-item__num">${String(index + 1).padStart(2, '0')}</span>
+            <div class="journey-item__body">
+              <h3 class="journey-item__title">${item.title}</h3>
+              <p class="journey-item__subtitle">${item.subtitle}</p>
+              <p class="journey-item__description">${item.description}</p>
             </div>
+            <span class="journey-item__year">${item.year}</span>
           </article>
         `,
           )

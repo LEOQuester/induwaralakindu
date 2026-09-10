@@ -1,0 +1,208 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  height: 3px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.scroll-progress__bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: var(--gradient-hero);
+  box-shadow: 0 0 12px rgba(79, 70, 229, 0.45);
+}
+
+.tilt-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --tilt-scale: 1;
+  transform-style: preserve-3d;
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 24px 60px rgba(79, 70, 229, 0.14);
+}
+
+.magnetic {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.stagger-grid > * {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--index, 0) * 0.08s);
+}
+
+.stagger-grid--active > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.ambient-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-scene__canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero .page-hero__inner,
+.page-hero .page-hero__glow {
+  position: relative;
+  z-index: 1;
+}
+
+.statement__line {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--line-delay, 0s);
+}
+
+.statement__line--in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.statement__line--accent {
+  background-size: 200% auto;
+  animation: shimmer-text 4s linear infinite;
+}
+
+@keyframes shimmer-text {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.statement__mesh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.1), transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08), transparent 50%);
+  animation: mesh-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes mesh-drift {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(2%, -2%); }
+}
+
+.btn--shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: btn-shine 3.5s ease-in-out infinite;
+}
+
+@keyframes btn-shine {
+  0%,
+  70%,
+  100% { left: -60%; }
+  35% { left: 120%; }
+}
+
+.hero__stat {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__stat::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(14, 165, 233, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.hero__stat:hover::before {
+  opacity: 1;
+}
+
+.skills-page__orbit-ring {
+  animation: spin-slow 18s linear infinite, orbit-pulse 3s ease-in-out infinite;
+}
+
+@keyframes orbit-pulse {
+  0%,
+  100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.15); }
+  50% { box-shadow: 0 0 0 12px rgba(79, 70, 229, 0); }
+}
+
+.contact-lane {
+  transform-style: preserve-3d;
+}
+
+.journey-item--highlight {
+  animation: highlight-glow 4s ease-in-out infinite;
+}
+
+@keyframes highlight-glow {
+  0%,
+  100% { box-shadow: inset 3px 0 0 var(--accent); }
+  50% { box-shadow: inset 3px 0 0 var(--accent), 0 0 30px rgba(79, 70, 229, 0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statement__line,
+  .stagger-grid > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .statement__line--accent,
+  .statement__mesh,
+  .btn--shine::after,
+  .skills-page__orbit-ring,
+  .journey-item--highlight {
+    animation: none;
+  }
+
+  .tilt-card {
+    transform: none !important;
+  }
+}
