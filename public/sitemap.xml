@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://induwaralakindu.galvanprime.lk/about.html</loc>
+    <loc>https://induwaralakindu.galvanprime.lk/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://induwaralakindu.galvanprime.lk/skills.html</loc>
+    <loc>https://induwaralakindu.galvanprime.lk/skills</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://induwaralakindu.galvanprime.lk/contact.html</loc>
+    <loc>https://induwaralakindu.galvanprime.lk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
