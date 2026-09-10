@@ -3,9 +3,10 @@ import { timeline } from '../data/timeline.js';
 export function renderTimeline() {
   return `
     <section id="journey" class="journey section">
-      <div class="journey__top reveal">
-        <p class="section-label">// 04 — JOURNEY</p>
-        <div class="section__header">
+      <div class="journey__top">
+        <div class="section__index reveal">05</div>
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Journey</span>
           <h2 class="section__title section__title--display">
             Key milestones<br />
             <span class="text-dim">that shaped the path.</span>

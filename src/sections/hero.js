@@ -43,18 +43,18 @@ export function renderHero() {
 
           <p class="hero__eyebrow reveal reveal--delay-1">${profile.tagline}</p>
 
-          <h1 class="hero__title" data-hero-title>
-            <span class="hero__title-line" data-hero-title-line>Building</span>
-            <span class="hero__title-accent" data-hero-title-line>intelligent</span>
-            <span class="hero__title-line" data-hero-title-line>systems.</span>
+          <h1 class="hero__title reveal reveal--delay-2">
+            <span class="hero__title-line">Building</span>
+            <em class="hero__title-accent">intelligent</em>
+            <span class="hero__title-line">systems.</span>
           </h1>
 
           <p class="hero__name reveal reveal--delay-3">${profile.name}</p>
           <p class="hero__headline reveal reveal--delay-4">${profile.headline}</p>
 
           <div class="hero__actions reveal reveal--delay-5">
-            <a href="#work" class="btn btn--primary btn--shine" data-magnetic>Explore Work</a>
-            <a href="#contact" class="btn btn--ghost" data-magnetic>Get in Touch</a>
+            <a href="/#work" class="btn btn--primary btn--shine" data-magnetic>Explore Work</a>
+            <a href="/contact.html" class="btn btn--ghost" data-magnetic>Get in Touch</a>
           </div>
 
           <div class="hero__social reveal reveal--delay-5">
@@ -67,8 +67,8 @@ export function renderHero() {
           ${stats
             .map(
               (stat) => `
-            <div class="hero__stat" data-tilt>
-              <span class="hero__stat-value" data-count-up="${stat.value}">${stat.value}</span>
+            <div class="hero__stat">
+              <span class="hero__stat-value">${stat.value}</span>
               <span class="hero__stat-label">${stat.label}</span>
             </div>
           `,

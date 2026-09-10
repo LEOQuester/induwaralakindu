@@ -12,7 +12,7 @@ export function renderCompanies() {
 
       <div class="ventures__inner section">
         <div class="section__header reveal">
-          <p class="section-label">// 06 — VENTURES</p>
+          <span class="section__eyebrow">Ventures</span>
           <h2 class="section__title section__title--display">
             Companies I lead<br />
             <span class="text-dim">and build.</span>

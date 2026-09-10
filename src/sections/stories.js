@@ -4,8 +4,9 @@ export function renderStories() {
   return `
     <section id="stories" class="stories">
       <div class="stories__intro section">
+        <div class="section__index reveal">#</div>
         <div class="section__header reveal">
-          <p class="section-label">// 03 — FEATURED STORIES</p>
+          <span class="section__eyebrow">Featured Stories</span>
           <h2 class="section__title section__title--display">
             Reality,<br />
             <span class="text-dim">engineered.</span>

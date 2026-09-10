@@ -1,20 +1,44 @@
 import { profile } from '../data/profile.js';
 import { education } from '../data/education.js';
-import { renderSectionHeader } from '../components/section-header.js';
+import { renderPageHero } from './page-hero.js';
+import { renderPageCta } from './page-cta.js';
 
-export function renderAbout() {
-  return `
-    <section id="about" class="about section flow-section flow-section--about">
-      ${renderSectionHeader({
-        index: '02',
+export function renderAbout({ showHero = false } = {}) {
+  const hero = showHero
+    ? renderPageHero({
         eyebrow: 'About',
         title: 'Engineer, founder,',
         titleAccent: 'educator.',
         lead: profile.bio,
-      })}
+        index: '01',
+      })
+    : '';
+
+  return `
+    ${hero}
+    <section id="about" class="about section ${showHero ? 'about--page' : ''}">
+      ${
+        showHero
+          ? ''
+          : `
+      <div class="about__top">
+        <div class="section__index reveal">03</div>
+        <div class="section__header reveal">
+          <span class="section__eyebrow">About</span>
+          <h2 class="section__title section__title--display">
+            Software engineer<br />
+            <span class="text-dim">in Colombo, building</span><br />
+            intelligent systems<br />
+            &amp; web products.
+          </h2>
+        </div>
+      </div>
+      `
+      }
 
       <div class="about__grid">
         <div class="about__bio reveal">
+          ${showHero ? '' : `<p class="about__lead">${profile.bio}</p>`}
           <div class="about__meta">
             <div class="about__meta-item">
               <span class="about__meta-label">Based in</span>
@@ -24,17 +48,8 @@ export function renderAbout() {
               <span class="about__meta-label">Leading</span>
               <span class="about__meta-value">Galvanprime (Pvt) Ltd</span>
             </div>
-            <div class="about__meta-item">
-              <span class="about__meta-label">Availability</span>
-              <span class="about__meta-value">${profile.availability}</span>
-            </div>
           </div>
-          <a
-            href="${profile.resume}"
-            class="btn btn--outline about__cv"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="${profile.resume}" class="btn btn--outline about__cv" download>
             Download CV
           </a>
         </div>
@@ -49,11 +64,11 @@ export function renderAbout() {
         </div>
       </div>
 
-      <div class="about__roles reveal" data-stagger-grid>
+      <div class="about__roles reveal">
         ${profile.roles
           .map(
-            (role, index) => `
-          <div class="about__role-card" style="--index: ${index}">
+            (role) => `
+          <div class="about__role-card">
             <span class="about__role-label">${role.label}</span>
             <span class="about__role-org">${role.org}</span>
           </div>
@@ -85,5 +100,17 @@ export function renderAbout() {
         </div>
       </div>
     </section>
+
+    ${
+      showHero
+        ? renderPageCta({
+            eyebrow: 'Skills',
+            title: 'Want the full toolkit?',
+            text: 'Explore the languages, frameworks, AI stack, and design tools I work with every day.',
+            primary: { href: '/skills.html', label: 'View Skills' },
+            secondary: { href: '/contact.html', label: 'Get in Touch' },
+          })
+        : ''
+    }
   `;
 }

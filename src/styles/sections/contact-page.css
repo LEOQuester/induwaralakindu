@@ -1,10 +1,5 @@
 .contact-page {
   padding-top: 0;
-  padding-bottom: clamp(6rem, 14vw, 10rem);
-}
-
-.flow-header--finale .section__title {
-  max-width: 18ch;
 }
 
 .contact-page__status {
@@ -54,7 +49,7 @@
 .contact-page__lanes {
   display: grid;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .contact-lane {
@@ -140,7 +135,7 @@
 .contact-page__grid {
   display: grid;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .contact-page__topics,

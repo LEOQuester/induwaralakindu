@@ -1,16 +1,7 @@
 import Lenis from 'lenis';
 
-let lenis = null;
-
-function getScrollOffset() {
-  const navHeight = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue('--nav-height'),
-  );
-  return -((navHeight || 4.75) * 16 + 16);
-}
-
 export function initLenis() {
-  lenis = new Lenis({
+  const lenis = new Lenis({
     lerp: 0.09,
     smoothWheel: true,
   });
@@ -141,45 +132,17 @@ export function initParallax() {
   onScroll();
 }
 
-function scrollToHash(hash, { immediate = false } = {}) {
-  if (!hash || hash === '#') return;
-
-  const target = document.querySelector(hash);
-  if (!target) return;
-
-  const offset = hash === '#hero' ? 0 : getScrollOffset();
-
-  if (lenis) {
-    lenis.scrollTo(target, { offset, immediate });
-  } else {
-    target.scrollIntoView({ behavior: immediate ? 'auto' : 'smooth', block: 'start' });
-  }
-}
-
 export function initSmoothScroll() {
-  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#') return;
+      const id = anchor.getAttribute('href');
+      if (!id || id === '#') return;
 
-      const hashIndex = href.indexOf('#');
-      if (hashIndex === -1) return;
-
-      const path = href.slice(0, hashIndex);
-      if (path && path !== '/' && path !== window.location.pathname) return;
-
-      const hash = href.slice(hashIndex);
-      const target = document.querySelector(hash);
+      const target = document.querySelector(id);
       if (!target) return;
 
       event.preventDefault();
-      scrollToHash(hash);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
-  if (window.location.hash) {
-    requestAnimationFrame(() => {
-      scrollToHash(window.location.hash, { immediate: true });
-    });
-  }
 }

@@ -26,15 +26,14 @@
   max-width: 14ch;
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 7vw, 5rem);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.02;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .page-hero__accent {
   display: block;
-  font-style: normal;
-  font-weight: 800;
+  font-style: italic;
   background: var(--gradient-hero);
   background-size: 200% auto;
   -webkit-background-clip: text;
