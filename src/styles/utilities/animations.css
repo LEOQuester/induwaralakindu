@@ -53,3 +53,108 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+@keyframes gradient-shift {
+  0%,
+  100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.1em, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes section-float-drift {
+  0%,
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(14px, -20px, 0) scale(1.06); }
+  66% { transform: translate3d(-10px, 12px, 0) scale(0.94); }
+}
+
+@keyframes line-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes border-glow {
+  0%,
+  100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.hero__title-word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-rise 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--word-i, 0) * 0.07s + 0.25s);
+}
+
+.hero__title-line {
+  overflow: hidden;
+}
+
+.section-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.section-decor__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  animation: section-float-drift var(--decor-dur, 16s) ease-in-out infinite;
+  animation-delay: var(--decor-delay, 0s);
+}
+
+.section-decor__orb--1 {
+  width: min(28vw, 14rem);
+  height: min(28vw, 14rem);
+  top: 10%;
+  right: 8%;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.18), transparent 70%);
+}
+
+.section-decor__orb--2 {
+  width: min(22vw, 11rem);
+  height: min(22vw, 11rem);
+  bottom: 15%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.14), transparent 70%);
+  --decor-dur: 20s;
+  --decor-delay: -5s;
+}
+
+.section-decor__line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.2), transparent);
+  transform-origin: left center;
+  animation: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.section-decor__line--top {
+  top: 0;
+  left: 10%;
+  right: 10%;
+}
+
+.section--has-decor {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--has-decor > *:not(.section-decor) {
+  position: relative;
+  z-index: 1;
+}

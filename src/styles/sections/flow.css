@@ -53,17 +53,19 @@
 .flow-header {
   display: grid;
   gap: 0.5rem;
-  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
 
 .flow-header__index {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 800;
+  font-style: normal;
   line-height: 1;
+  letter-spacing: -0.04em;
   color: rgba(79, 70, 229, 0.14);
   margin-bottom: -0.5rem;
+  will-change: transform;
 }
 
 .flow-header__lead {

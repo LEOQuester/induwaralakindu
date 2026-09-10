@@ -17,9 +17,9 @@
   --gradient-hero: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 50%, #7c3aed 100%);
   --gradient-warm: linear-gradient(160deg, #fafbff 0%, #f0f4ff 45%, #fdf4ff 100%);
   --gradient-glow: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.12), transparent 62%);
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-label: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-label: 'Inter', system-ui, sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.25rem;
@@ -28,7 +28,7 @@
   --shadow-md: 0 16px 48px rgba(15, 23, 42, 0.08);
   --shadow-glow: 0 0 100px rgba(79, 70, 229, 0.12);
   --nav-height: 4.75rem;
-  --section-gap: clamp(5rem, 12vw, 8rem);
+  --section-gap: clamp(3rem, 7vw, 5rem);
   --container: min(1180px, calc(100% - 2.5rem));
   --container-wide: min(1320px, calc(100% - 2rem));
 }

@@ -54,7 +54,7 @@
 .contact-page__lanes {
   display: grid;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .contact-lane {
@@ -140,7 +140,7 @@
 .contact-page__grid {
   display: grid;
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .contact-page__topics,

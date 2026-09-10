@@ -193,6 +193,81 @@ export function initStatementMotion() {
   observer.observe(statement);
 }
 
+export function initHeroTitleWords() {
+  if (prefersReducedMotion()) return;
+
+  const lines = document.querySelectorAll('[data-hero-title-line]');
+  let wordIndex = 0;
+
+  lines.forEach((line) => {
+    const text = line.textContent.trim();
+    line.textContent = '';
+    line.setAttribute('aria-label', text);
+
+    text.split(/\s+/).forEach((word) => {
+      const span = document.createElement('span');
+      span.className = 'hero__title-word';
+      span.style.setProperty('--word-i', wordIndex);
+      span.textContent = word;
+      line.appendChild(span);
+      line.appendChild(document.createTextNode(' '));
+      wordIndex += 1;
+    });
+  });
+}
+
+export function initSectionDecor() {
+  const targets = document.querySelectorAll('.flow-section, .work.section, .statement');
+
+  targets.forEach((section, index) => {
+    section.classList.add('section--has-decor');
+
+    const decor = document.createElement('div');
+    decor.className = 'section-decor';
+    decor.setAttribute('aria-hidden', 'true');
+    decor.innerHTML = `
+      <span class="section-decor__line section-decor__line--top" style="animation-delay: ${index * 0.1}s"></span>
+      <span class="section-decor__orb section-decor__orb--1" style="--decor-delay: ${-index * 2}s"></span>
+      <span class="section-decor__orb section-decor__orb--2" style="--decor-delay: ${-index * 3}s"></span>
+    `;
+
+    section.prepend(decor);
+  });
+}
+
+export function initSectionIndexParallax() {
+  if (prefersReducedMotion()) return;
+
+  const indices = document.querySelectorAll('.section__index, .flow-header__index');
+  if (!indices.length) return;
+
+  const onScroll = () => {
+    indices.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      const offset = (progress - 0.5) * 24;
+      el.style.transform = `translate3d(0, ${offset}px, 0)`;
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+export function initCardHoverGlow() {
+  if (prefersReducedMotion() || window.matchMedia('(pointer: coarse)').matches) return;
+
+  document.querySelectorAll('.project-card, .about__role-card, .education-item').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--glow-x', `${x}%`);
+      card.style.setProperty('--glow-y', `${y}%`);
+    });
+  });
+}
+
 export function initFlowSections() {
   const sections = document.querySelectorAll('.flow-section');
 
@@ -217,4 +292,8 @@ export function initMotion() {
   initCountUp();
   initStatementMotion();
   initFlowSections();
+  initHeroTitleWords();
+  initSectionDecor();
+  initSectionIndexParallax();
+  initCardHoverGlow();
 }

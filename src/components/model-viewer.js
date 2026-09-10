@@ -27,7 +27,7 @@ export function initModelViewer() {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-  const baseCamera = { x: 0.15, y: 0.05, z: 3.4 };
+  const baseCamera = { x: 0.45, y: 0.05, z: 3.4 };
   camera.position.set(baseCamera.x, baseCamera.y, baseCamera.z);
 
   const renderer = new THREE.WebGLRenderer({
@@ -74,7 +74,7 @@ export function initModelViewer() {
     object.position.sub(center);
     const scale = 1.85 / Math.max(size.x, size.y, size.z);
     object.scale.setScalar(scale);
-    object.position.x = 0.55;
+    object.position.x = 1.15;
     object.position.y -= size.y * scale * 0.06;
   };
 
@@ -135,14 +135,14 @@ export function initModelViewer() {
     camera.position.x = baseCamera.x + smoothPointer.x * 0.22 + scroll * 0.35;
     camera.position.y = baseCamera.y + smoothPointer.y * 0.1 - scroll * 0.18;
     camera.position.z = baseCamera.z + scroll * 1.1;
-    camera.lookAt(0.2 + smoothPointer.x * 0.08, smoothPointer.y * 0.05, 0);
+    camera.lookAt(0.65 + smoothPointer.x * 0.08, smoothPointer.y * 0.05, 0);
 
     if (model) {
       model.rotation.y =
         0.35 + smoothPointer.x * 0.18 + Math.sin(t * 0.3) * 0.05 + scroll * 0.45;
       model.rotation.x = smoothPointer.y * 0.06 + scroll * 0.08;
       model.position.y = Math.sin(t * 0.7) * 0.025 - scroll * 0.12;
-      model.position.x = 0.55 + scroll * 0.25;
+      model.position.x = 1.15 + scroll * 0.2;
     }
 
     if (mixer) mixer.update(clock.getDelta());
