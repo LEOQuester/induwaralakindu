@@ -1,0 +1,4 @@
+# Multi-page build: serve about.html, skills.html, and contact.html directly.
+# (Replaces legacy single-page Redirect rules that pointed these URLs at /#... hashes.)
+
+DirectoryIndex index.html
