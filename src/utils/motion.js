@@ -201,12 +201,13 @@ export function initHeroTitleWords() {
 
   lines.forEach((line) => {
     const text = line.textContent.trim();
+    const isAccent = line.classList.contains('hero__title-accent');
     line.textContent = '';
     line.setAttribute('aria-label', text);
 
     text.split(/\s+/).forEach((word) => {
       const span = document.createElement('span');
-      span.className = 'hero__title-word';
+      span.className = isAccent ? 'hero__title-word hero__title-word--accent' : 'hero__title-word';
       span.style.setProperty('--word-i', wordIndex);
       span.textContent = word;
       line.appendChild(span);
